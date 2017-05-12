@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+  /**
+  * JS Training - 7th May 2017
+  */
+
+  var arrSimple = [1,2,3,4,5,6];
+
+
+  for (var i = 0; i < arrSimple.length; i++) {
+    arrSimple[i] = arrSimple[i] * 2;
+  }
+  console.log({arrSimple})
+
+  var mappedArr = arrSimple.map(function (val){
+                  return val * 2 ;
+                });
+  console.log({mappedArr});
+
+
+  var filteredArr = arrSimple.filter(
+                      function (val){
+                        return val >= 3 && val < 5;
+                      }
+                    )
+  console.log({filteredArr});
+
+
+  // Fariha- mapped array - return division
+  var MainArr = [22, 44, 66];
+   var ArrayMap = MainArr.map(function(val){
+      return val/2;
+   })
+   console.log({ArrayMap});
+
+  /** filter  example- fariha
+  */
+  var MainArr = [22, 44, 66, 88];
+   var ArrayMap = MainArr.map(function(val){
+      return val/2;
+   });
+   console.log({ArrayMap});
+   var ArrayFilter = MainArr.filter(function(value){
+        return value >= 11;
+   })
+
+
+   console.log({ArrayFilter});
+
+  // Fariha code ends
+
+
+  /**
+  * Iqrar Raza
+  */
+
+  // List of Users Object
+  var usersArr = [
+    {
+      firstName: 'Fasih',
+      lastName: 'Naqvi',
+      age: 78
+    },
+    {
+      firstName: 'Ahmed',
+      lastName: 'babrey',
+      age: 20
+    },
+    {
+      firstName: 'Mohammad',
+      lastName: 'Adil',
+      age: 34
+    },
+    {
+      firstName: 'Fariha',
+      lastName: 'Narjis',
+      age: 23
+    },
+    {
+      firstName: 'Asif',
+      lastName: 'Qureshi',
+      age: 45
+    },
+    {
+      firstName: 'Iqrar',
+      lastName: 'Raza',
+      age: 68
+    }
+  ];
+
+  /**
+  * getUsersFullNames
+  * @param {array}  usersArr - Array of Objects with FirstName LastName
+  * @return {array} - Array of strings with concated FirstName LastName
+  */
+  var getUsersFullNames = function (){
+    return this.map(
+      function(obj, index){
+        return obj.firstName + ' ' + obj.lastName + " " + index;
+      }
+    )
+  }
+
+  Array.prototype.getUsersFullNames = getUsersFullNames;
+
+  // Mapped array of users - to get the fullname
+  var users = getUsersFullNames(usersArr);
+  console.log(users);
+  //['Fasih Naqvi', 'Ahmed Babrey'...]
+
+  // Filter array of user - to get the old age persons
+  var oldUsers = usersArr.filter(function(obj){
+      return obj.age > 50;
+    }).getUsersFullNames();
+
+  // ['Fasih Naqvi', 'Iqrar Raza'];
+
+  console.log(getUsersFullNames(oldUsers));
+
+  // Iqrar Raza code ends here
+
+
+  // Fasih and Adil Code
+  var arrSimple = [1,'t',2,'r',3,'y',4,5,6];
+  var arrSimpleNew = [1,2,3,4,5,6];
+
+  var mappedArr = arrSimpleNew.map(function (val){
+        return val % 2 ;
+    });
+  console.log({mappedArr});
+  // 101010
+
+  var filteredArr = arrSimple.filter(function (val){
+        return (typeof val === 'number');
+    })
+  var reverseArr = filteredArr.reverse();
+  console.log(reverseArr);
+  //[6,5,4,'y',3,'r',2,'t',1]
+  // fasih Adil code ends
+
+
+
+  //Altamash & Haseeb
+  var Array = [1,2,3,4,5,6,7,8,9];
+  console.log(Array);
+
+  var newArr = Array.map(function (val, i){
+    return val * 2;
+  });
+
+  console.log(newArr);
+  //[2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+  var anotherArr = newArr.map(function(val){
+    return val + 2;
+  });
+
+  console.log(anotherArr);
+  //[4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+  var onotherFil = anotherArr.filter(
+    function(val){
+      return val >= 10 && val <= 20
+    });
+
+  console.log(onotherFil);
+  //[10, 12, 14, 16, 18, 20]
+
+
+  var filterArr =  Array.filter(
+  function(val){
+    return val >= 3 && val < 5
+  })
+  console.log(filterArr);
+  //[3, 4]
+
+  // haseeb altamash code ends
+
+  // Asif and Ahmad
+
+  var arrSimple = [1, 2, 3, 4, 5];
+
+  var newArr = arrSimple.map(
+    function (val){
+      return val *2;
+    });
+  console.log(newArr);
+
+
+  var filterArr = arrSimple.filter(
+    function (val){
+      return val >2;
+    });
+
+  console.log(filterArr);
+
+
+
+  function (arr){
+    return arr.filter(
+      function(val){
+        return typeof val === 'number';
+      }
+    )
+  };
+
+  var arr = [1,23,3,4,5,6];
+  printMyArray = function(arr){
+    console.log(arr);
+  }
+
+  printMyArray(arr);
+
+  // Prototype Array
+  Array.prototype.printMyArray = function (){
+    console.log(this);
+  }
+
+  arr.printMyArray();
+
+  // Prototype Object
+  Object.prototype.printMyObj = function (){
+    console.log(this);
+  }
+
+  var arr = {a: 'raza', b: 'zaidi'};
+  arr.printMyObj();
+
+
+
+  var mixedArray = [1,23,'sdasd',3,4,'asdas'];
+  Array.prototype.getNumericVals = function (){
+    return this.filter(
+      function(val){
+        return typeof val === 'number';
+      }
+    )
+  };
+  mixedArray.getNumericVals();
+
+
+
+
+  /////// Prototype ////
+  var usersArr = [
+    {
+      firstName: 'Fasih',
+      lastName: 'Naqvi',
+      age: 78
+    },
+    {
+      firstName: 'Ahmed',
+      lastName: 'babrey',
+      age: 20
+    },
+    {
+      firstName: 'Mohammad',
+      lastName: 'Adil',
+      age: 34
+    },
+    {
+      firstName: 'Fariha',
+      lastName: 'Narjis',
+      age: 23
+    },
+    {
+      firstName: 'Asif',
+      lastName: 'Qureshi',
+      age: 45
+    },
+    {
+      firstName: 'Iqrar',
+      lastName: 'Raza',
+      age: 68
+    }
+  ];
+
+
+  var getUsersFullNames = function (){
+    return this.map(
+      function(obj, index){
+        return obj.firstName + ' ' + obj.lastName + " " + index;
+      }
+    )
+  }
+  Array.prototype.getUsersFullNames = getUsersFullNames;
+
+
+  // Mapped array of users - to get the fullname
+  var users = usersArr.getUsersFullNames();
+  console.log({users});
+  //['Fasih Naqvi', 'Ahmed Babrey'...]
+
+
+
+  // Filter array of user - to get the old age persons
+  var oldUsers = usersArr.filter(function(obj){
+      return obj.age > 50;
+    }).getUsersFullNames();
+
+
+  console.log({oldUsers});
+
+
+
+
+
+  </script>
+</body>
+</html>
