@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myNinjaApp">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js" charset="utf-8"></script>
 <style media="screen">
 .content {
   overflow: hidden;
@@ -10,24 +11,18 @@
 </style>
 <body>
 
-<div class="content" ng-app="">
-
+<div class="content" ng-controller="Controller1">
   <input type="text" ng-model="favSport" placeholder="enter Your fav sport...">
    <p>your fav sport is <span>{{favSport}}</span></p>
 
 <br/>
 <br/>
 <p>{{5 * 5}}</p>
-<div ng-init="numbers=[1,2,3,4]">
-  <p>{{numbers[0] + numbers[3]}}</p>
-</div>
-<div ng-init="meats=['turkey', 'chicken', 'beef']">
-  <p>You like {{meats[0]}} and you also like {{meats[2]}}</p>
-</div>
-<div ng-init="color='red'">
-  <p class="{{color}}">hello dues</p>
-</div>
-<br/>
+<p>{{message}}</p>
+<ul>
+  <li ng-repeat="ninja1 in ninjas1">{{ninja1}}</li>
+  <li ng-repeat="number in numbers">{{number}}</li>
+</ul>
 <br/>
 <div ng-init="ninjas=['yoshi', 'crystal', 'ryu', 'shaun']">
   <ul>
@@ -36,15 +31,8 @@
 </div>
 <br/>
 <br/>
-<p>{{message}}</p>
-<ul>
-  <li ng-repeat="ninja1 in ninjas1">{{ninja1}}</li>
-  <li ng-repeat="number in numbers">{{number}}</li>
-</ul>
 <br/>
 <br/>
 </div>
-</div>
-
 </body>
 </html>
