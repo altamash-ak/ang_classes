@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js"></script>
 <style media="screen">
 .content {
   overflow: hidden;
@@ -10,7 +11,7 @@
 </style>
 <body>
 
-<div class="content" ng-app="">
+<div class="content" ng-app="myNinjaApp">
 
   <input type="text" ng-model="favSport" placeholder="enter Your fav sport...">
    <p>your fav sport is <span>{{favSport}}</span></p>
