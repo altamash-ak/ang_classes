@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style media="screen">
+.content {
+  overflow: hidden;
+  padding: 46px;
+  background: #eee;
+}
+</style>
+<body>
+
+<div class="content" ng-app="">
+
+  <input type="text" ng-model="favSport" placeholder="enter Your fav sport...">
+   <p>your fav sport is <span>{{favSport}}</span></p>
+
+<br/>
+<br/>
+<p>{{5 * 5}}</p>
+<p>{{5 + 5}}</p>
+<br/>
+<div ng-init="numbers=[1,2,3,4]">
+  <p>{{numbers[0] + numbers[3]}}</p>
+</div>
+<div ng-init="meats=['turkey', 'chicken', 'beef']">
+  <p>You like {{meats[0]}} and you also like {{meats[2]}}</p>
+</div>
+<div ng-init="color='red'">
+  <p class="{{color}}">hello dues</p>
+</div>
+<br/>
+<br/>
+<div ng-init="ninjas=['yoshi', 'crystal', 'ryu', 'shaun']">
+  <ul>
+    <li ng-repeat="ninja in ninjas">{{ninja}}</li>
+  </ul>
+</div>
+<br/>
+<br/>
+<p>{{message}}</p>
+<ul>
+  <li ng-repeat="ninja1 in ninjas1">{{ninja1}}</li>
+  <li ng-repeat="number in numbers">{{number}}</li>
+</ul>
+<br/>
+<br/>
+</div>
+</div>
+
+</body>
+</html>
